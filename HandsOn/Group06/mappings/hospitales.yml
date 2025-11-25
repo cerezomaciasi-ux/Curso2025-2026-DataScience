@@ -1,0 +1,25 @@
+prefixes:
+  rr: http://www.w3.org/ns/r2rml#
+  rml: http://semweb.mmlab.be/ns/rml#
+  ql: http://semweb.mmlab.be/ns/ql#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  ns: http://www.owl-ontologies.com/ns#
+  
+mappings:
+  HospitalMapping:
+    sources:
+      - ['csv/hospitales-updated.csv~csv']
+    s: http://www.owl-ontologies.com/ns#Hospital/$(Nombre)
+    po:
+      - [a, ns:Hospital]
+      - [ns:isNamed, $(Nombre), xsd:string]
+      - [ns:isFinancedby, $(Financiaci), xsd:string]
+      - [ns:isType, $(Tipo), xsd:string]
+      - [ns:hasBeds, $(Camas), xsd:integer]
+      - [ns:isLocatedin, $(Direccion), xsd:string]
+      - [ns:wasCreatedin, $(Fecha), xsd:dateTime]
+      - [ns:estaEnbarrio, $(Barrio), xsd:string]
+      - [ns:tieneCodigodeBarrio, $(codbarrio), xsd:integer]
+      - [ns:tieneCoddistBarrio, $(coddistbar), xsd:integer]
+      - [ns:tieneCodigodistrito, $(coddistrit), xsd:integer]
+      - [ns:hasShape, $(Geo Shape), xsd:string]
